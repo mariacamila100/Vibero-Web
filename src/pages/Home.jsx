@@ -26,7 +26,7 @@ const SectionDivider = () => (
       opacity: 0.5,
       borderRadius: '2px'
     }}></div>
-  </div>
+  </button>
 );
 
 export const Home = () => {
@@ -154,10 +154,14 @@ export const Home = () => {
               "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
               "https://images.unsplash.com/photo-1470770841072-f978cf4d019e"
             ].map((src, index) => (
-              <div key={index} style={{
+              <button key={src} type="button" style={{
                 position: 'relative',
                 transform: `rotate(${index % 2 === 0 ? '-2deg' : '2deg'})`,
-                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                background: 'none',
+                border: 'none',
+                padding: 0,
+                cursor: 'pointer'
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.transform = 'rotate(0deg) scale(1.08)';
