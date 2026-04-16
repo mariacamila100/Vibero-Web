@@ -42,7 +42,7 @@ export const Navbar = () => {
         >
           {/* La imagen del logo que me mostraste */}
           <img
-            src="./src/assets/iconvegas.png"
+            src="/iconvegas.png"
             alt="Logo Vegas del Verde"
             style={{
               height: '45px', // Tamaño ideal para una barra de navegación
