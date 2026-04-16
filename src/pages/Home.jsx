@@ -213,25 +213,142 @@ export const Home = () => {
           </a>
         </div>
       </section>
+      {/* ── 2. INTRODUCCIÓN OPTIMIZADA ── */}
+{/* ── 2. INTRODUCCIÓN OPTIMIZADA (Icono tras título) ── */}
+<section
+  id="nosotros"
+  className="reveal-section"
+  style={{ 
+    ...revealStyle, 
+    padding: '6rem 10%', 
+    backgroundColor: 'var(--crema)', 
+    backgroundImage: 'url("https://www.transparenttextures.com/patterns/natural-paper.png")' 
+  }}
+>
+  <div style={{ 
+    maxWidth: '1100px', 
+    margin: '0 auto', 
+    display: 'grid', 
+    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
+    gap: '4.5rem', 
+    alignItems: 'center' 
+  }}>
+    
+    {/* COLUMNA DE TEXTO */}
+    <div style={{ textAlign: 'center' }}>
+      <span style={{ 
+        color: 'var(--terracota)', 
+        letterSpacing: '5px', 
+        textTransform: 'uppercase', 
+        fontSize: '0.8rem', 
+        fontWeight: 'bold',
+        display: 'block',
+        marginBottom: '1rem'
+      }}>
+        Bienvenido al Origen
+      </span>
+      
+      {/* Título y Icono alineados (como en la imagen adjunta) */}
+      <div style={{ marginBottom: '1.5rem' }}>
+        <h2 style={{ 
+          fontSize: 'clamp(2.5rem, 5vw, 4rem)', 
+          color: 'var(--verde-selva)', 
+          lineHeight: '1.1',
+          fontFamily: 'var(--serif)',
+          margin: 0
+        }}>
+          Donde el bosque <br /> abraza la ciudad
+        </h2>
+        {/* Icono de Vegas inmediatamente después (dorado/marrón) */}
+        <div style={{ margin: '0 auto', marginTop: '1rem', width: 'clamp(2.5rem, 5vw, 4rem)' }}>
+          <img 
+            src="/iconvegas.png" // Asegúrate de que esta es la versión dorada/marrón del icono
+            alt="Icono decorativo Vegas del Verde"
+            style={{ 
+              width: '100%', 
+              height: 'auto', 
+              objectFit: 'contain',
+              opacity: 0.9 
+            }} 
+          />
+        </div>
+      </div>
 
-      {/* ── 2. INTRODUCCIÓN ── */}
-      <section
-        id="nosotros"
-        className="reveal-section"
-        style={{ ...revealStyle, padding: '8rem 10%', backgroundColor: 'var(--crema)', backgroundImage: 'url("https://www.transparenttextures.com/patterns/natural-paper.png")' }}
-      >
-        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
-          <span style={{ color: 'var(--terracota)', letterSpacing: '5px', textTransform: 'uppercase', fontSize: '0.9rem', fontWeight: 'bold' }}>Bienvenido al Origen</span>
-          <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'var(--verde-selva)', marginTop: '1rem', fontFamily: 'var(--serif)' }}>
-            Cultivamos Vida, Creamos Espacios Verdes
-          </h2>
-          <SectionDivider />
-          <p style={{ fontSize: '1.4rem', lineHeight: '1.8', color: '#444', fontWeight: '300' }}>
-            Vegas del Verde es un oasis metropolitano en Santander. Cerca de todo, pero sumergido en un silencio forestal absoluto.
+      <div style={{ margin: '0 auto', width: '60px', height: '1.5px', backgroundColor: 'var(--terracota)', marginBottom: '2.5rem', opacity: 0.6 }}></div>
+      
+      <p style={{ fontSize: '1.15rem', lineHeight: '1.8', color: '#444', fontWeight: '300', marginBottom: '1.5rem' }}>
+        Ubicado en el corazón del área metropolitana de <strong>Bucaramanga</strong>, Vegas del Verde es un oasis urbano diseñado para quienes buscan reconectar.
+      </p>
+      <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#555', fontWeight: '300', margin: 0 }}>
+        Ya sea para un descanso profundo, una celebración especial o simplemente respirar aire puro, nuestro refugio ofrece un ambiente natural único en Santander.
+      </p>
+    </div>
+
+    {/* COLUMNA DE IMAGEN (HORARIOS) CON EFECTO CLIP */}
+    <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+      <div style={{
+        position: 'relative',
+        transform: 'rotate(2.5deg)',
+        transition: 'transform 0.4s ease',
+        maxWidth: '320px',
+        width: '100%'
+      }}>
+        {/* Clip metálico decorativo */}
+        <div style={{ 
+          position: 'absolute', 
+          top: '-18px', 
+          left: '50%', 
+          transform: 'translateX(-50%)', 
+          width: '38px', 
+          height: '28px', 
+          backgroundColor: '#C0C0C0', // Plateado más claro
+          borderRadius: '4px', 
+          zIndex: 3, 
+          boxShadow: '0 3px 6px rgba(0,0,0,0.25)',
+          border: '1px solid #A0A0A0'
+        }}></div>
+
+        {/* Marco de la imagen (Tipo Nota Polaroid) */}
+        <div style={{
+          backgroundColor: 'white',
+          padding: '10px 10px 40px 10px', // Espacio abajo para el look de nota
+          boxShadow: '0 25px 50px rgba(0,0,0,0.15)',
+          borderRadius: '2px',
+          border: '1px solid rgba(0,0,0,0.05)',
+          position: 'relative'
+        }}>
+          <img 
+            src="/h.png" // Cambia esto por la imagen real de los horarios
+            alt="Horarios de atención y actividades Vegas del Verde"
+            style={{ 
+              width: '100%', 
+              height: 'auto', 
+              display: 'block',
+              filter: 'sepia(0.08)' // Sutil toque vintage para la textura de papel
+            }} 
+          />
+          {/* Pie de foto manuscrito sutil */}
+          <p style={{
+            position: 'absolute',
+            bottom: '12px',
+            left: '0',
+            width: '100%',
+            textAlign: 'center',
+            fontFamily: 'var(--serif)',
+            fontSize: '0.8rem',
+            color: '#888',
+            fontStyle: 'italic',
+            letterSpacing: '1px',
+            margin: 0
+          }}>
+            Te esperamos pronto
           </p>
         </div>
-      </section>
+      </div>
+    </div>
 
+  </div>
+</section>
       {/* ── 3. SERVICIOS ──
           CAMBIO: se eliminó el borderRadius 80px 80px 0 0 que creaba un "escalón" blanco
           y se añadió paddingBottom reducido para que el wave divider cierre la sección sin hueco. */}
@@ -244,12 +361,12 @@ export const Home = () => {
           <div style={{ flex: '1 1 500px', position: 'relative' }}>
             <div style={{ position: 'absolute', top: '20px', left: '20px', right: '-20px', bottom: '-20px', border: '2px solid var(--terracota)', borderRadius: '40px', zIndex: 0 }}></div>
             <img
-              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1000"
+              src="/posada.png"
               alt="Instalaciones de La Posada en Vegas del Verde, Santander"
               loading="lazy"
               width="1000"
               height="600"
-              style={{ width: '100%', height: '600px', objectFit: 'cover', borderRadius: '40px', position: 'relative', zIndex: 1 }}
+              style={{ width: '100%', height: '450px', objectFit: 'cover', borderRadius: '40px', position: 'relative', zIndex: 1 }}
             />
           </div>
           <div style={{ flex: '1 1 400px', textAlign: 'center' }}>
@@ -286,47 +403,102 @@ export const Home = () => {
         </svg>
       </div>
 
-      {/* ── 4. GALERÍA ──
-          CAMBIO: fondo cambiado a var(--crema) para conectar visualmente con el wave divider
-          y eliminar el contraste blanco/blanco que generaba espacios vacíos sin sentido. */}
-      <section
-        id="actividades"
-        className="reveal-section"
-        style={{ ...revealStyle, padding: '3rem 5% 8rem 5%', backgroundColor: 'var(--crema)', backgroundImage: 'url("https://www.transparenttextures.com/patterns/natural-paper.png")' }}
-      >
-        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-          <span style={{ color: 'var(--terracota)', letterSpacing: '5px', textTransform: 'uppercase', fontSize: '0.85rem', fontWeight: 'bold' }}>Galería</span>
-          <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'var(--verde-selva)', marginTop: '0.5rem' }}>
-            Momentos del Paraíso
-          </h2>
-          <SectionDivider />
+      {/* ── 4. GALERÍA CON EFECTO POLAROID DINÁMICO ── */}
+<section
+  id="actividades"
+  className="reveal-section"
+  style={{ 
+    ...revealStyle, 
+    padding: '2rem 5% 6rem 5%', 
+    backgroundColor: 'var(--crema)', 
+    backgroundImage: 'url("https://www.transparenttextures.com/patterns/natural-paper.png")' 
+  }}
+>
+  {/* Estilos para el efecto de las imágenes */}
+  <style>{`
+    .galeria-item {
+      position: relative;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+    .galeria-item:hover {
+      transform: rotate(0deg) scale(1.05) translateY(-10px) !important;
+      z-index: 10;
+    }
+    .galeria-item:hover img {
+      box-shadow: 0 30px 60px rgba(0,0,0,0.25) !important;
+      border-color: #fcfcfc !important;
+    }
+    .galeria-item:hover .cinta-adhesiva {
+      background-color: #d1d1d1 !important;
+      transform: translateX(-50%) scale(1.1);
+    }
+  `}</style>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2.5rem', marginTop: '3rem' }}>
-            {[
-              { src: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6", alt: "Planta tropical en Vegas del Verde Santander" },
-              { src: "https://images.unsplash.com/photo-1497250681960-ef046c08a56e", alt: "Helecho nativo del bosque en Vegas del Verde" },
-              { src: "https://images.unsplash.com/photo-1502082553048-f009c37129b9", alt: "Sendero forestal de Vegas del Verde" },
-              { src: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e", alt: "Amanecer en la naturaleza de Santander Colombia" }
-            ].map(({ src, alt }, index) => (
-              <div key={src} style={{
-                position: 'relative',
-                transform: `rotate(${index % 2 === 0 ? '-2deg' : '2deg'})`,
-                transition: 'all 0.4s ease'
-              }}>
-                <div style={{ position: 'absolute', top: '-15px', left: '50%', transform: 'translateX(-50%)', width: '35px', height: '25px', backgroundColor: '#BDBDBD', borderRadius: '4px', zIndex: 2, border: '1px solid #999' }}></div>
-                <img
-                  src={`${src}?auto=format&fit=crop&w=600&q=80`}
-                  alt={alt}
-                  loading="lazy"
-                  width="600"
-                  height="320"
-                  style={{ width: '100%', height: '320px', objectFit: 'cover', borderRadius: '8px', boxShadow: '0 15px 35px rgba(0,0,0,0.18)', border: '8px solid white' }}
-                />
-              </div>
-            ))}
-          </div>
+  <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+    <span style={{ color: 'var(--terracota)', letterSpacing: '5px', textTransform: 'uppercase', fontSize: '0.85rem', fontWeight: 'bold' }}>
+      Galería
+    </span>
+    <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'var(--verde-selva)', marginTop: '0.5rem' }}>
+      Momentos Vegas
+    </h2>
+    <SectionDivider />
+
+    <div style={{ 
+      display: 'grid', 
+      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+      gap: '3.5rem', 
+      marginTop: '4rem' 
+    }}>
+      {[
+        { src: "/inspo2.png", alt: "Planta tropical en Vegas del Verde Santander" },
+        { src: "/image.png", alt: "Helecho nativo del bosque en Vegas del Verde" },
+        { src: "/inspo3.png", alt: "Sendero forestal de Vegas del Verde" },
+        { src: "/inspov.png", alt: "Amanecer en la naturaleza de Santander Colombia" }
+      ].map(({ src, alt }, index) => (
+        <div 
+          key={src} 
+          className="galeria-item"
+          style={{
+            transform: `rotate(${index % 2 === 0 ? '-3deg' : '3deg'})`,
+          }}
+        >
+          {/* Cinta adhesiva decorativa */}
+          <div className="cinta-adhesiva" style={{ 
+            position: 'absolute', 
+            top: '-15px', 
+            left: '50%', 
+            transform: 'translateX(-50%)', 
+            width: '40px', 
+            height: '25px', 
+            backgroundColor: 'rgba(189, 189, 189, 0.8)', 
+            borderRadius: '2px', 
+            zIndex: 2, 
+            border: '1px solid rgba(0,0,0,0.1)',
+            transition: '0.3s'
+          }}></div>
+
+          <img
+            src={`${src}?auto=format&fit=crop&w=600&q=80`}
+            alt={alt}
+            loading="lazy"
+            width="600"
+            height="320"
+            style={{ 
+              width: '100%', 
+              height: '350px', 
+              objectFit: 'cover', 
+              borderRadius: '2px', 
+              boxShadow: '0 10px 25px rgba(0,0,0,0.15)', 
+              border: '10px solid white',
+              borderBottomWidth: '40px' // Simula el espacio de una Polaroid
+            }}
+          />
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ── TRANSICIÓN: crema → blanco para la sección de contacto ── */}
       <div style={{ backgroundColor: 'var(--crema)', lineHeight: 0, margin: 0, padding: 0 }}>
