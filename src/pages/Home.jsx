@@ -103,7 +103,7 @@ export const Home = () => {
       {/* 1. HERO - Corrección de Scroll */}
       <section id="inicio" style={{ height: '100vh', width: '100%', position: 'relative', overflow: 'hidden' }}>
         <video autoPlay loop muted playsInline style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}>
-          <source src="./src/assets/mariposa.mp4" type="video/mp4" />
+          <source src="/mariposa.mp4" type="video/mp4" />
         </video>
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3))', zIndex: 1 }} />
         <div style={{ position: 'relative', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', color: 'white', textAlign: 'center', zIndex: 2, padding: '0 5%' }}>
