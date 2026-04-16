@@ -11,7 +11,7 @@ const SectionDivider = () => (
     gap: '10px'
   }}>
     <img
-      src="./src/assets/iconvegas.png"
+      src="/iconvegas.png"
       alt="decoración"
       style={{
         width: '75px',

@@ -11,7 +11,7 @@ const SectionDivider = ({ color = 'var(--terracota)', invert = false }) => (
     gap: '8px'
   }}>
     <img
-      src="./src/assets/iconvegas.png"
+      src="/iconvegas.png"
       alt="decoración"
       style={{
         width: '50px',
