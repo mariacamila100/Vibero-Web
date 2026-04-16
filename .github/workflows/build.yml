@@ -1,0 +1,27 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build and analyze
+    runs-on: windows-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      # --- AÑADE ESTE PASO PARA WINDOWS ---
+      - name: Clean SonarQube cache
+        run: |
+          if (Test-Path ~\.sonar) { Remove-Item -Recurse -Force ~\.sonar }
+      # ------------------------------------
+
+      - uses: SonarSource/sonarqube-scan-action@master # Usar master suele ser más estable para acciones de Sonar
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}

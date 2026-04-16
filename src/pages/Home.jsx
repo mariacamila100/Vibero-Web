@@ -92,7 +92,7 @@ export const Home = () => {
 
   return (
     <main style={{
-      overflowY: 'hidden',
+      overflowy: 'hidden',
       width: '100%',
       position: 'relative',
       backgroundColor: 'var(--crema)',
