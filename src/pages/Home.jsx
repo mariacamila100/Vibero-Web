@@ -26,7 +26,7 @@ const SectionDivider = () => (
       opacity: 0.5,
       borderRadius: '2px'
     }}></div>
-  </button>
+  </div>
 );
 
 export const Home = () => {
@@ -199,7 +199,7 @@ export const Home = () => {
                     border: '8px solid white' // Marco tipo foto instantánea
                   }}
                 />
-              </div>
+              </button>
             ))}
           </div>
         </div>
