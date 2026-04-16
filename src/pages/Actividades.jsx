@@ -5,6 +5,24 @@ export const Actividades = () => {
   return (
     <main style={{ backgroundColor: 'var(--crema)', minHeight: '100vh', overflowX: 'hidden' }}>
       
+      {/* INYECCIÓN DE ESTILOS RESPONSIVE */}
+      <style>{`
+        @media (max-width: 768px) {
+          .padding-global { padding: 4rem 5% !important; }
+          .hero-title { font-size: 2.5rem !important; }
+          .grid-actividades { grid-template-columns: 1fr !important; }
+          .grid-conectividad { 
+            grid-template-columns: 1fr !important; 
+            gap: 3rem !important; 
+            padding-bottom: 5rem !important;
+          }
+          .mosaico-imagenes img { height: 200px !important; }
+          .mosaico-banner { height: 180px !important; }
+          .cta-banner { padding: 4rem 5% !important; }
+          .cta-title { font-size: 1.8rem !important; }
+        }
+      `}</style>
+
       {/* 1. HERO MINI */}
       <section style={{ 
         height: '40vh', 
@@ -14,22 +32,23 @@ export const Actividades = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: 'white'
+        color: 'white',
+        padding: '0 5%'
       }}>
         <div style={{ textAlign: 'center' }}>
-          <h1 style={{ fontFamily: 'var(--serif)', fontSize: '4rem', marginBottom: '1rem' }}>Experiencias</h1>
+          <h1 className="hero-title" style={{ fontFamily: 'var(--serif)', fontSize: '4rem', marginBottom: '1rem' }}>Experiencias</h1>
           <div style={{ width: '50px', height: '2px', backgroundColor: 'var(--terracota)', margin: '0 auto' }}></div>
         </div>
       </section>
 
-      {/* 2. GRID DE ACTIVIDADES LOCALES (Naturaleza) */}
-      <section style={{ padding: '8rem 10%' }}>
+      {/* 2. GRID DE ACTIVIDADES LOCALES */}
+      <section className="padding-global" style={{ padding: '8rem 10%' }}>
         <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-          <span style={{ color: 'var(--terracota)', letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.8rem', fontWeight: '800' }}>Inmersión Natural</span>
-          <h2 style={{ fontSize: '3rem', fontFamily: 'var(--serif)', color: 'var(--verde-selva)', marginTop: '1rem' }}>Dentro del Refugio</h2>
+          <span style={{ color: 'var(--terracota)', letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.75rem', fontWeight: '800' }}>Inmersión Natural</span>
+          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontFamily: 'var(--serif)', color: 'var(--verde-selva)', marginTop: '1rem' }}>Dentro del Refugio</h2>
         </div>
 
-        <div style={{ 
+        <div className="grid-actividades" style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
           gap: '2rem', 
@@ -47,15 +66,15 @@ export const Actividades = () => {
             }}>
               <div style={{ color: 'var(--terracota)', marginBottom: '1.5rem', display: 'flex', justifyContent: 'center' }}>{act.icon}</div>
               <h3 style={{ fontFamily: 'var(--serif)', color: 'var(--verde-selva)', marginBottom: '1rem', fontSize: '1.4rem' }}>{act.title}</h3>
-              <p style={{ color: '#777', lineHeight: '1.7', fontWeight: '300' }}>{act.desc}</p>
+              <p style={{ color: '#777', lineHeight: '1.7', fontWeight: '300', fontSize: '0.95rem' }}>{act.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* 3. SECCIÓN: CONECTIVIDAD URBANA Y TURÍSTICA */}
-      <section style={{ padding: '4rem 10% 10rem 10%' }}>
-        <div style={{ 
+      <section className="padding-global" style={{ padding: '4rem 10% 10rem 10%' }}>
+        <div className="grid-conectividad" style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', 
           gap: '6rem', 
@@ -64,14 +83,12 @@ export const Actividades = () => {
           margin: '0 auto'
         }}>
           
-          {/* GALERÍA MOSAICO DINÁMICA - IMÁGENES CORREGIDAS */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
-            {/* Imagen 1 Corregida (Chicamocha/Santander) */}
+          {/* GALERÍA MOSAICO */}
+          <div className="mosaico-imagenes" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
             <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=800" alt="Chicamocha" style={{ width: '100%', height: '300px', objectFit: 'cover', borderRadius: '40px 10px 10px 10px' }} />
-            {/* Imagen 2 Corregida (Bucaramanga/Ciudad) */}
             <img src="https://images.unsplash.com/photo-1536431311719-398b6704d4cc?auto=format&fit=crop&q=80&w=800" alt="Bucaramanga" style={{ width: '100%', height: '300px', objectFit: 'cover', borderRadius: '10px 40px 10px 10px' }} />
             
-            <div style={{ 
+            <div className="mosaico-banner" style={{ 
               gridColumn: 'span 2', height: '250px', backgroundColor: 'var(--verde-selva)', borderRadius: '10px 10px 40px 40px',
               display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem', color: 'white', textAlign: 'center'
             }}>
@@ -84,44 +101,43 @@ export const Actividades = () => {
 
           {/* TEXTO DE CONECTIVIDAD */}
           <div>
-            <span style={{ color: 'var(--terracota)', letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.8rem', fontWeight: '800' }}>Ubicación Privilegiada</span>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', fontFamily: 'var(--serif)', color: 'var(--verde-selva)', margin: '1.5rem 0', lineHeight: '1.1' }}>
+            <span style={{ color: 'var(--terracota)', letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.75rem', fontWeight: '800' }}>Ubicación Privilegiada</span>
+            <h2 style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', fontFamily: 'var(--serif)', color: 'var(--verde-selva)', margin: '1.5rem 0', lineHeight: '1.1' }}>
               Cerca de todo, <br /> lejos de lo cotidiano
             </h2>
             
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.9', color: '#555', fontWeight: '300', marginBottom: '2rem' }}>
+            <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#555', fontWeight: '300', marginBottom: '2rem' }}>
               Nuestra excepcional ubicación le permite desplazarse en cuestión de minutos al <strong>centro histórico de Bucaramanga</strong>, complejos médicos especializados, y los centros comerciales más exclusivos.
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '3rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--verde-selva)', fontSize: '0.9rem', fontWeight: '600' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--verde-selva)', fontSize: '0.85rem', fontWeight: '600' }}>
                 <Utensils size={18} color="var(--terracota)" /> Gastronomía Top
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--verde-selva)', fontSize: '0.9rem', fontWeight: '600' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--verde-selva)', fontSize: '0.85rem', fontWeight: '600' }}>
                 <Compass size={18} color="var(--terracota)" /> Pueblos Patrimonio
               </div>
             </div>
 
             <div style={{ 
-              backgroundColor: 'white', padding: '2.5rem', borderRadius: '30px', 
+              backgroundColor: 'white', padding: '2rem', borderRadius: '30px', 
               boxShadow: '0 20px 40px rgba(0,0,0,0.03)', borderLeft: '6px solid var(--terracota)' 
             }}>
-              <p style={{ margin: 0, color: '#444', fontStyle: 'italic', lineHeight: '1.7' }}>
-                "Vegas del Verde organiza excursiones y tours guiados personalizados a los sitios de mayor interés cultural y turístico de la región, como el imponente Cañón del Chicamocha."
+              <p style={{ margin: 0, color: '#444', fontStyle: 'italic', lineHeight: '1.7', fontSize: '0.95rem' }}>
+                "Vegas del Verde organiza excursiones y tours guiados personalizados a los sitios de mayor interés cultural y turístico de la región."
               </p>
             </div>
           </div>
-
         </div>
       </section>
 
       {/* 4. BANNER FINAL CTA */}
-      <section style={{ backgroundColor: '#1a2e1a', padding: '6rem 10%', textAlign: 'center', color: 'white' }}>
-        <h3 style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', marginBottom: '2rem' }}>¿Listo para explorar Santander?</h3>
-        <p style={{ opacity: 0.7, marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem' }}>Permítanos ser su guía en esta aventura entre la montaña y la ciudad.</p>
+      <section className="cta-banner" style={{ backgroundColor: '#1a2e1a', padding: '6rem 10%', textAlign: 'center', color: 'white' }}>
+        <h3 className="cta-title" style={{ fontFamily: 'var(--serif)', fontSize: '2.5rem', marginBottom: '1.5rem' }}>¿Listo para explorar Santander?</h3>
+        <p style={{ opacity: 0.7, marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem', fontSize: '1rem' }}>Permítanos ser su guía en esta aventura entre la montaña y la ciudad.</p>
         <button style={{ 
-          backgroundColor: 'var(--terracota)', color: 'white', border: 'none', padding: '1.2rem 3rem', 
-          borderRadius: '50px', fontWeight: '700', cursor: 'pointer', transition: '0.3s'
+          backgroundColor: 'var(--terracota)', color: 'white', border: 'none', padding: '1.2rem 2.5rem', 
+          borderRadius: '50px', fontWeight: '700', cursor: 'pointer', transition: '0.3s', fontSize: '0.9rem'
         }} onMouseOver={e => e.currentTarget.style.transform = 'scale(1.05)'}
            onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}>
           SOLICITAR TOUR GUIADO

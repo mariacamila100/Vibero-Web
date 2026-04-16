@@ -1,9 +1,44 @@
 import React from 'react';
 import { Leaf, Wind, ShieldCheck, Heart, Sprout, Trees } from 'lucide-react';
 
+// Reutilizamos el divisor decorativo (icono de la marca)
+const SectionDivider = ({ color = 'var(--terracota)', invert = false }) => (
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    margin: '1.5rem 0',
+    gap: '8px'
+  }}>
+    <img
+      src="./src/assets/iconvegas.png"
+      alt="decoración"
+      style={{
+        width: '50px',
+        height: 'auto',
+        objectFit: 'contain',
+        filter: invert ? 'brightness(0) invert(1)' : 'none'
+      }}
+    />
+    <div style={{
+      width: '60px',
+      height: '1.5px',
+      backgroundColor: color,
+      opacity: 0.6
+    }}></div>
+  </div>
+);
+
 export const SobreNosotros = () => {
   return (
-    <main style={{ backgroundColor: 'var(--crema)', minHeight: '100vh', overflowX: 'hidden' }}>
+    <main style={{
+      backgroundColor: 'var(--crema)',
+      backgroundImage: 'url("https://www.transparenttextures.com/patterns/natural-paper.png")', // Textura de papel
+      minHeight: '100vh',
+      overflowX: 'hidden',
+      display: 'flex',
+      flexDirection: 'column' // Asegura que el contenido empuje al footer hacia abajo
+    }}>
       {/* INYECCIÓN DE ESTILOS PARA RESPONSIVE */}
       <style>{`
         @media (max-width: 768px) {
@@ -14,9 +49,13 @@ export const SobreNosotros = () => {
           .stats-container { justify-content: center !important; }
           .floater-box { right: 0 !important; bottom: 20px !important; padding: 1.5rem !important; }
         }
+        .hover-btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 25px 50px rgba(210, 105, 30, 0.3);
+        }
       `}</style>
 
-      {/* 1. HERO CON PARALLAX SUTIL */}
+      {/* 1. HERO */}
       <section style={{
         height: '70vh',
         position: 'relative',
@@ -26,14 +65,15 @@ export const SobreNosotros = () => {
         backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&q=80&w=2000")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'scroll', // Cambiado a scroll para mejor desempeño en móvil
         color: 'white',
         textAlign: 'center',
         padding: '0 5%'
       }}>
         <div style={{ zIndex: 2 }}>
           <span style={{ letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.8rem', fontWeight: '700', display: 'block', marginBottom: '1rem' }}>Más que una Posada</span>
-          <h1 className="hero-title" style={{ fontSize: 'clamp(3.5rem, 8vw, 6rem)', fontFamily: 'var(--serif)', fontWeight: '400', lineHeight: '1.1' }}>El Origen del Verde</h1>
+          <h1 className="hero-title" style={{ fontSize: 'clamp(3.5rem, 8vw, 6rem)', fontFamily: 'var(--serif)', fontWeight: '400', lineHeight: '1.1' }}>
+            El Origen del Verde
+          </h1>
         </div>
       </section>
 
@@ -47,10 +87,9 @@ export const SobreNosotros = () => {
               backgroundColor: 'var(--terracota)', borderRadius: '50%', zIndex: 0, opacity: 0.1
             }}></div>
             <img
-
               src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=1200"
-              alt="Vivero Vegas del Verde" style={{ width: '100%', height: '700px', objectFit: 'cover', borderRadius: '100px 20px 100px 20px', position: 'relative', zIndex: 1, boxShadow: '0 40px 80px rgba(0,0,0,0.1)' }}
-
+              alt="Vivero Vegas del Verde"
+              style={{ width: '100%', height: '700px', objectFit: 'cover', borderRadius: '100px 20px 100px 20px', position: 'relative', zIndex: 1, boxShadow: '0 40px 80px rgba(0,0,0,0.1)' }}
             />
             <div className="floater-box" style={{
               position: 'absolute', bottom: '40px', right: '-20px', backgroundColor: 'white', padding: '2rem',
@@ -64,10 +103,14 @@ export const SobreNosotros = () => {
           </div>
 
           <div>
-            <span style={{ color: 'var(--terracota)', letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.8rem', fontWeight: '700' }}>Desde la semilla</span>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', fontFamily: 'var(--serif)', color: 'var(--verde-selva)', margin: '1.5rem 0 2.5rem', lineHeight: '1.1' }}>
-              Nuestra historia florece en el <span style={{ color: 'var(--terracota)' }}>Vivero</span>
-            </h2>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+              <span style={{ color: 'var(--terracota)', letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.8rem', fontWeight: '700' }}>Desde la semilla</span>
+              <h2 style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', fontFamily: 'var(--serif)', color: 'var(--verde-selva)', marginTop: '1rem', marginBottom: '0.5rem', lineHeight: '1.1' }}>
+                Nuestra historia florece en el <span style={{ color: 'var(--terracota)' }}>Vivero</span>
+              </h2>
+              {/* Icono alineado debajo del título corregido */}
+              <img src="./src/assets/iconvegas.png" style={{ width: '45px', opacity: 0.8, marginBottom: '2rem' }} alt="decoración" />
+            </div>
 
             <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#555', fontWeight: '300', marginBottom: '2rem' }}>
               Ubicado en el corazón del área metropolitana de Bucaramanga, <strong>Vegas del Verde</strong> comenzó no como un hotel, sino como un acto de amor por la botánica. Lo que hoy es un oasis urbano fue primero un vivero dedicado a la preservación de especies nativas.
@@ -96,7 +139,11 @@ export const SobreNosotros = () => {
       {/* 3. PROPÓSITO: LA POSADA + EVENTOS */}
       <section className="seccion-padding" style={{ padding: '8rem 10%', backgroundColor: 'var(--verde-selva)', color: 'white' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontFamily: 'var(--serif)', marginBottom: '4rem' }}>Un Refugio Multidimensional</h2>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '4rem' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontFamily: 'var(--serif)', margin: 0 }}>Un Refugio Multidimensional</h2>
+            <SectionDivider invert={true} color="white" />
+          </div>
+
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem' }}>
             <div style={{ padding: '1rem' }}>
               <Heart size={40} color="var(--terracota)" style={{ marginBottom: '1.5rem' }} />
@@ -118,16 +165,20 @@ export const SobreNosotros = () => {
       </section>
 
       {/* 4. CIERRE INVITACIÓN */}
-      <section className="seccion-padding" style={{ padding: '10rem 10%', textAlign: 'center' }}>
-        <span style={{ color: 'var(--terracota)', letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.8rem', fontWeight: '800' }}>El viaje continúa</span>
-        <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontFamily: 'var(--serif)', color: 'var(--verde-selva)', margin: '2rem 0' }}>
-          Ven a conocer nuestras raíces.
-        </h2>
-        <a href="https://wa.me/573166758362" target="_blank" rel="noopener noreferrer" style={{
+      <section className="seccion-padding" style={{ padding: '10rem 10%', textAlign: 'center', paddingBottom: '12rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <span style={{ color: 'var(--terracota)', letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.8rem', fontWeight: '800' }}>El viaje continúa</span>
+          <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontFamily: 'var(--serif)', color: 'var(--verde-selva)', marginTop: '2rem', marginBottom: '0.5rem' }}>
+            Ven a conocer nuestras raíces.
+          </h2>
+          <img src="./src/assets/iconvegas.png" style={{ width: '50px', opacity: 0.8, marginBottom: '3rem' }} alt="decoración" />
+        </div>
+
+        <a href="https://wa.me/573166758362" target="_blank" rel="noopener noreferrer" className="hover-btn" style={{
           display: 'inline-block', padding: '1.2rem 3rem', backgroundColor: 'var(--terracota)',
           color: 'white', textDecoration: 'none', borderRadius: '50px', fontWeight: '600',
           fontSize: '0.9rem', boxShadow: '0 20px 40px rgba(210, 105, 30, 0.2)',
-          transition: 'transform 0.3s ease'
+          transition: 'all 0.3s ease'
         }}>
           RESERVAR UNA VISITA AL VIVERO
         </a>
