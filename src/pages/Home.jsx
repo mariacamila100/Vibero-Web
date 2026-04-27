@@ -214,139 +214,109 @@ export const Home = () => {
         </div>
       </section>
       {/* ── 2. INTRODUCCIÓN OPTIMIZADA ── */}
-{/* ── 2. INTRODUCCIÓN OPTIMIZADA (Icono tras título) ── */}
+{/* ── 2. INTRODUCCIÓN MEJORADA ── */}
 <section
   id="nosotros"
   className="reveal-section"
   style={{ 
     ...revealStyle, 
-    padding: '6rem 10%', 
+    padding: '8rem 10%', 
     backgroundColor: 'var(--crema)', 
-    backgroundImage: 'url("https://www.transparenttextures.com/patterns/natural-paper.png")' 
+    backgroundImage: 'url("https://www.transparenttextures.com/patterns/natural-paper.png")',
+    overflow: 'hidden'
   }}
 >
   <div style={{ 
-    maxWidth: '1100px', 
+    maxWidth: '1200px', 
     margin: '0 auto', 
     display: 'grid', 
-    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
-    gap: '4.5rem', 
+    gridTemplateColumns: '1.2fr 0.8fr', 
+    gap: '4rem', 
     alignItems: 'center' 
   }}>
     
-    {/* COLUMNA DE TEXTO */}
-    <div style={{ textAlign: 'center' }}>
+    {/* TEXTO */}
+    <div style={{ textAlign: 'left' }}>
+      
       <span style={{ 
         color: 'var(--terracota)', 
-        letterSpacing: '5px', 
+        letterSpacing: '4px', 
         textTransform: 'uppercase', 
-        fontSize: '0.8rem', 
-        fontWeight: 'bold',
-        display: 'block',
-        marginBottom: '1rem'
+        fontSize: '0.75rem', 
+        fontWeight: 'bold'
       }}>
-        Bienvenido al Origen
+        Más que un vivero
       </span>
       
-      {/* Título y Icono alineados (como en la imagen adjunta) */}
-      <div style={{ marginBottom: '1.5rem' }}>
-        <h2 style={{ 
-          fontSize: 'clamp(2.5rem, 5vw, 4rem)', 
-          color: 'var(--verde-selva)', 
-          lineHeight: '1.1',
-          fontFamily: 'var(--serif)',
-          margin: 0
-        }}>
-          Donde el bosque <br /> abraza la ciudad
-        </h2>
-        {/* Icono de Vegas inmediatamente después (dorado/marrón) */}
-        <div style={{ margin: '0 auto', marginTop: '1rem', width: 'clamp(2.5rem, 5vw, 4rem)' }}>
-          <img 
-            src="/iconvegas.png" // Asegúrate de que esta es la versión dorada/marrón del icono
-            alt="Icono decorativo Vegas del Verde"
-            style={{ 
-              width: '100%', 
-              height: 'auto', 
-              objectFit: 'contain',
-              opacity: 0.9 
-            }} 
-          />
-        </div>
-      </div>
-
-      <div style={{ margin: '0 auto', width: '60px', height: '1.5px', backgroundColor: 'var(--terracota)', marginBottom: '2.5rem', opacity: 0.6 }}></div>
-      
-      <p style={{ fontSize: '1.15rem', lineHeight: '1.8', color: '#444', fontWeight: '300', marginBottom: '1.5rem' }}>
-        Ubicado en el corazón del área metropolitana de <strong>Bucaramanga</strong>, Vegas del Verde es un oasis urbano diseñado para quienes buscan reconectar.
-      </p>
-      <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#555', fontWeight: '300', margin: 0 }}>
-        Ya sea para un descanso profundo, una celebración especial o simplemente respirar aire puro, nuestro refugio ofrece un ambiente natural único en Santander.
-      </p>
-    </div>
-
-    {/* COLUMNA DE IMAGEN (HORARIOS) CON EFECTO CLIP */}
-    <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-      <div style={{
-        position: 'relative',
-        transform: 'rotate(2.5deg)',
-        transition: 'transform 0.4s ease',
-        maxWidth: '320px',
-        width: '100%'
+      <h2 style={{ 
+        fontSize: 'clamp(2.8rem, 6vw, 4.5rem)', 
+        color: 'var(--verde-selva)', 
+        lineHeight: '1.1',
+        fontFamily: 'var(--serif)',
+        margin: '1rem 0 2rem 0'
       }}>
-        {/* Clip metálico decorativo */}
-        <div style={{ 
-          position: 'absolute', 
-          top: '-18px', 
-          left: '50%', 
-          transform: 'translateX(-50%)', 
-          width: '38px', 
-          height: '28px', 
-          backgroundColor: '#C0C0C0', // Plateado más claro
-          borderRadius: '4px', 
-          zIndex: 3, 
-          boxShadow: '0 3px 6px rgba(0,0,0,0.25)',
-          border: '1px solid #A0A0A0'
-        }}></div>
+        Una pausa en medio del caos
+      </h2>
 
-        {/* Marco de la imagen (Tipo Nota Polaroid) */}
-        <div style={{
-          backgroundColor: 'white',
-          padding: '10px 10px 40px 10px', // Espacio abajo para el look de nota
-          boxShadow: '0 25px 50px rgba(0,0,0,0.15)',
-          borderRadius: '2px',
-          border: '1px solid rgba(0,0,0,0.05)',
-          position: 'relative'
-        }}>
-          <img 
-            src="/h.png" // Cambia esto por la imagen real de los horarios
-            alt="Horarios de atención y actividades Vegas del Verde"
-            style={{ 
-              width: '100%', 
-              height: 'auto', 
-              display: 'block',
-              filter: 'sepia(0.08)' // Sutil toque vintage para la textura de papel
-            }} 
-          />
-          {/* Pie de foto manuscrito sutil */}
-          <p style={{
-            position: 'absolute',
-            bottom: '12px',
-            left: '0',
-            width: '100%',
-            textAlign: 'center',
-            fontFamily: 'var(--serif)',
-            fontSize: '0.8rem',
-            color: '#888',
-            fontStyle: 'italic',
-            letterSpacing: '1px',
-            margin: 0
-          }}>
-            Te esperamos pronto
-          </p>
-        </div>
-      </div>
+      <p style={{ 
+        fontSize: '1.2rem', 
+        lineHeight: '1.7', 
+        color: '#444',
+        marginBottom: '1.5rem'
+      }}>
+        En <strong>Bucaramanga</strong>, creamos un espacio donde el tiempo baja la velocidad 
+        y la naturaleza vuelve a tener sentido.
+      </p>
+
+      <p style={{ 
+        fontSize: '1.05rem', 
+        lineHeight: '1.7', 
+        color: '#666'
+      }}>
+        Aquí no vienes solo a comprar plantas. Vienes a desconectar, respirar y reconectar contigo.
+      </p>
     </div>
 
+    {/* IMAGENES */}
+    <div style={{ position: 'relative' }}>
+
+      {/* Imagen principal */}
+      <div style={{
+        borderRadius: '20px',
+        overflow: 'hidden',
+        boxShadow: '0 30px 60px rgba(0,0,0,0.15)',
+        transform: 'rotate(-2deg)',
+        transition: 'all 0.4s ease'
+      }}
+      onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.03) rotate(0deg)'}
+      onMouseLeave={(e) => e.currentTarget.style.transform = 'rotate(-2deg)'}
+      >
+        <img 
+          src="/yoga.png"
+          alt="Naturaleza"
+          style={{ width: '100%', display: 'block' }} 
+        />
+      </div>
+
+      {/* Imagen secundaria flotante */}
+      <div style={{
+        position: 'absolute',
+        bottom: '-40px',
+        left: '-40px',
+        width: '180px',
+        borderRadius: '15px',
+        overflow: 'hidden',
+        boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+        transform: 'rotate(5deg)'
+      }}>
+        <img 
+          src="/aguila.png"
+          alt="Detalle planta"
+          style={{ width: '100%' }} 
+        />
+      </div>
+
+    </div>
   </div>
 </section>
       {/* ── 3. SERVICIOS ──
@@ -361,7 +331,7 @@ export const Home = () => {
           <div style={{ flex: '1 1 500px', position: 'relative' }}>
             <div style={{ position: 'absolute', top: '20px', left: '20px', right: '-20px', bottom: '-20px', border: '2px solid var(--terracota)', borderRadius: '40px', zIndex: 0 }}></div>
             <img
-              src="/posada.png"
+              src="/pos.png"
               alt="Instalaciones de La Posada en Vegas del Verde, Santander"
               loading="lazy"
               width="1000"
@@ -371,7 +341,7 @@ export const Home = () => {
           </div>
           <div style={{ flex: '1 1 400px', textAlign: 'center' }}>
             <span style={{ color: 'var(--terracota)', letterSpacing: '4px', textTransform: 'uppercase', fontSize: '0.8rem', fontWeight: '700' }}>Exclusividad</span>
-            <h2 style={{ fontSize: '4rem', fontFamily: 'var(--serif)', color: 'var(--verde-selva)', margin: '1rem 0' }}>La Posada</h2>
+            <h2 style={{ fontSize: '4rem', fontFamily: 'var(--serif)', color: 'var(--verde-selva)', margin: '1rem 0' }}>Ecoposada</h2>
             <SectionDivider />
             <p style={{ fontSize: '1.3rem', lineHeight: '1.8', color: '#555', marginBottom: '3rem' }}>
               Un concepto de alojamiento que integra el lujo con la biodiversidad de la región.
@@ -517,78 +487,274 @@ export const Home = () => {
       </div>
 
       {/* ── 5. CONTACTO ── */}
-      <section
-        id="localizacion"
-        className="reveal-section"
-        style={{ ...revealStyle, padding: '6rem 5% 8rem 5%', backgroundColor: '#FFFFFF', position: 'relative' }}
+<section
+  id="localizacion"
+  className="reveal-section"
+  style={{ 
+    ...revealStyle, 
+    padding: '3.5rem 5% 6rem 5%', 
+    backgroundColor: '#FFFFFF', 
+    position: 'relative' 
+  }}
+>
+  <div style={{ maxWidth: '1050px', margin: '0 auto' }}>
+
+    {/* HEADER MEJORADO */}
+    <div style={{ 
+      textAlign: 'center', 
+      marginBottom: '4rem',
+      position: 'relative'
+    }}>
+      <span style={{ 
+        color: 'var(--terracota)', 
+        letterSpacing: '6px', 
+        textTransform: 'uppercase', 
+        fontSize: '0.8rem', 
+        fontWeight: 'bold'
+      }}>
+        Contacto
+      </span>
+
+      <h2 style={{ 
+        fontFamily: 'var(--serif)', 
+        fontSize: 'clamp(3rem, 6vw, 4.5rem)', 
+        color: 'var(--verde-selva)', 
+        lineHeight: '1.1',
+        margin: '1rem 0'
+      }}>
+        ¿Hablamos?
+      </h2>
+
+      <div style={{
+        width: '80px',
+        height: '2px',
+        background: 'var(--terracota)',
+        margin: '0 auto',
+        boxShadow: '0 0 10px rgba(191,122,91,0.4)'
+      }}></div>
+
+      <p style={{
+        marginTop: '1.5rem',
+        color: '#666',
+        fontSize: '1.05rem'
+      }}>
+        Cuéntanos qué necesitas. Nosotros nos encargamos del resto.
+      </p>
+    </div>
+
+    {/* GRID */}
+    <div style={{ 
+      display: 'grid', 
+      gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
+      gap: '2.5rem', 
+      alignItems: 'start' 
+    }}>
+
+      {/* FORMULARIO */}
+      <div 
+        style={{ 
+          backgroundColor: '#fff', 
+          padding: '2.5rem', 
+          borderRadius: '30px', 
+          boxShadow: '0 30px 60px rgba(0,0,0,0.1)', 
+          border: '1px solid #f5f5f5',
+          position: 'relative',
+          overflow: 'hidden',
+          zIndex: 10,
+          transition: 'all 0.3s ease'
+        }}
+        onMouseEnter={(e)=> e.currentTarget.style.transform='translateY(-5px)'}
+        onMouseLeave={(e)=> e.currentTarget.style.transform='translateY(0px)'}
       >
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <span style={{ color: 'var(--terracota)', letterSpacing: '5px', textTransform: 'uppercase', fontSize: '0.85rem', fontWeight: 'bold', display: 'block', marginBottom: '0.5rem' }}>Contacto</span>
-            <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(2.5rem, 5vw, 4rem)', color: 'var(--verde-selva)', lineHeight: '1.1' }}>¿Hablamos?</h2>
-            <SectionDivider />
-          </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem', alignItems: 'start' }}>
-            <div style={{ backgroundColor: '#fff', padding: '2.5rem', borderRadius: '30px', boxShadow: '0 20px 50px -12px rgba(0, 0, 0, 0.08)', border: '1px solid #f0f0f0', position: 'relative', overflow: 'hidden', zIndex: 10 }}>
-              <div style={{
-                position: 'absolute', top: mostrarExito ? '20px' : '-100px', left: '50%', transform: 'translateX(-50%)',
-                backgroundColor: 'var(--verde-selva)', color: 'white', padding: '1rem 2rem', borderRadius: '15px',
-                zIndex: 100, transition: 'all 0.5s ease', display: 'flex', alignItems: 'center', gap: '10px', width: '85%', justifyContent: 'center'
-              }}>
-                <span>🌿</span> <span style={{ fontWeight: '600' }}>¡Solicitud enviada con éxito!</span>
-              </div>
-
-              <h3 style={{ fontSize: '1.8rem', color: 'var(--verde-selva)', marginBottom: '1.2rem', fontFamily: 'var(--serif)' }}>Envíanos un mensaje</h3>
-              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <label htmlFor="nombre" style={{ fontSize: '0.7rem', fontWeight: '800', color: 'var(--verde-selva)', marginBottom: '5px' }}>NOMBRE</label>
-                  <input id="nombre" name="nombre" value={formData.nombre} onChange={handleChange} required type="text" style={{ padding: '1rem', borderRadius: '12px', border: '1px solid #eee' }} />
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <label htmlFor="correo" style={{ fontSize: '0.7rem', fontWeight: '800', color: 'var(--verde-selva)', marginBottom: '5px' }}>CORREO ELECTRÓNICO</label>
-                  <input id="correo" name="correo" value={formData.correo} onChange={handleChange} required type="email" style={{ padding: '1rem', borderRadius: '12px', border: '1px solid #eee' }} />
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <label htmlFor="mensaje" style={{ fontSize: '0.7rem', fontWeight: '800', color: 'var(--verde-selva)', marginBottom: '5px' }}>MENSAJE</label>
-                  <textarea id="mensaje" name="mensaje" value={formData.mensaje} onChange={handleChange} required rows="3" style={{ padding: '1rem', borderRadius: '12px', border: '1px solid #eee', resize: 'none' }}></textarea>
-                </div>
-                <button
-                  type="submit"
-                  disabled={enviando}
-                  style={{ backgroundColor: enviando ? '#ccc' : 'var(--verde-selva)', color: 'white', padding: '1.1rem', borderRadius: '12px', border: 'none', fontWeight: 'bold', cursor: enviando ? 'not-allowed' : 'pointer' }}
-                >
-                  {enviando ? 'ENVIANDO...' : 'ENVIAR SOLICITUD'}
-                </button>
-              </form>
-            </div>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-              <div style={{ padding: '2rem', backgroundColor: 'var(--crema)', borderRadius: '25px', borderLeft: '5px solid var(--terracota)' }}>
-                <h4 style={{ color: 'var(--terracota)', fontWeight: '800', textTransform: 'uppercase', fontSize: '0.75rem', marginBottom: '0.8rem' }}>Ubicación en Santander</h4>
-                <address style={{ fontStyle: 'normal', fontSize: '1.2rem', color: 'var(--verde-selva)', fontFamily: 'var(--serif)' }}>
-                  Vereda Río Frío, Sector Vegas, <br /> Santander, Colombia
-                </address>
-                <nav aria-label="Navegación rápida" style={{ marginTop: '1rem', display: 'flex', gap: '10px' }}>
-                  <a href="#inicio" rel="nofollow" style={{ fontSize: '0.7rem', color: 'gray', textDecoration: 'none' }}>Inicio</a> |
-                  <a href="#servicios" rel="nofollow" style={{ fontSize: '0.7rem', color: 'gray', textDecoration: 'none' }}>Servicios</a> |
-                  <a href="#actividades" rel="nofollow" style={{ fontSize: '0.7rem', color: 'gray', textDecoration: 'none' }}>Galería</a>
-                </nav>
-              </div>
-              <div style={{ height: '300px', borderRadius: '25px', overflow: 'hidden', boxShadow: '0 15px 30px rgba(0,0,0,0.08)', border: '1px solid #f0f0f0' }}>
-                <iframe
-                  title="Mapa ubicación Vegas del Verde, Vereda Río Frío, Santander, Colombia"
-                  src="https://maps.google.com/maps?q=Santander,Colombia&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                  width="100%"
-                  height="100%"
-                  loading="lazy"
-                  style={{ border: 0, filter: 'grayscale(0.3)' }}
-                ></iframe>
-              </div>
-            </div>
-          </div>
+        {/* ALERTA */}
+        <div style={{
+          position: 'absolute',
+          top: mostrarExito ? '20px' : '-100px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          backgroundColor: 'var(--verde-selva)',
+          color: 'white',
+          padding: '1rem 2rem',
+          borderRadius: '15px',
+          zIndex: 100,
+          transition: 'all 0.5s ease',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '10px',
+          width: '85%',
+          justifyContent: 'center'
+        }}>
+          <span>🌿</span>
+          <span style={{ fontWeight: '600' }}>¡Solicitud enviada con éxito!</span>
         </div>
-      </section>
+
+        <h3 style={{ 
+          fontSize: '1.8rem', 
+          color: 'var(--verde-selva)', 
+          marginBottom: '1.2rem', 
+          fontFamily: 'var(--serif)' 
+        }}>
+          Envíanos un mensaje
+        </h3>
+
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+
+          {/* NOMBRE */}
+          <input
+            id="nombre"
+            name="nombre"
+            value={formData.nombre}
+            onChange={handleChange}
+            required
+            type="text"
+            placeholder="Tu nombre"
+            style={{ 
+              padding: '1rem', 
+              borderRadius: '12px', 
+              border: '1px solid #eee',
+              outline: 'none',
+              transition: 'all 0.2s ease'
+            }}
+            onFocus={(e)=> e.target.style.border='1px solid var(--terracota)'}
+            onBlur={(e)=> e.target.style.border='1px solid #eee'}
+          />
+
+          {/* CORREO */}
+          <input
+            id="correo"
+            name="correo"
+            value={formData.correo}
+            onChange={handleChange}
+            required
+            type="email"
+            placeholder="Tu correo electrónico"
+            style={{ 
+              padding: '1rem', 
+              borderRadius: '12px', 
+              border: '1px solid #eee',
+              outline: 'none',
+              transition: 'all 0.2s ease'
+            }}
+            onFocus={(e)=> e.target.style.border='1px solid var(--terracota)'}
+            onBlur={(e)=> e.target.style.border='1px solid #eee'}
+          />
+
+          {/* MENSAJE */}
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            value={formData.mensaje}
+            onChange={handleChange}
+            required
+            rows="3"
+            placeholder="Escribe tu mensaje..."
+            style={{ 
+              padding: '1rem', 
+              borderRadius: '12px', 
+              border: '1px solid #eee',
+              resize: 'none',
+              outline: 'none',
+              transition: 'all 0.2s ease'
+            }}
+            onFocus={(e)=> e.target.style.border='1px solid var(--terracota)'}
+            onBlur={(e)=> e.target.style.border='1px solid #eee'}
+          />
+
+          {/* BOTÓN */}
+          <button
+            type="submit"
+            disabled={enviando}
+            style={{ 
+              background: 'linear-gradient(135deg, var(--verde-selva), #2f5d3a)',
+              color: 'white', 
+              padding: '1.2rem', 
+              borderRadius: '14px', 
+              border: 'none', 
+              fontWeight: 'bold',
+              letterSpacing: '1px',
+              cursor: enviando ? 'not-allowed' : 'pointer',
+              boxShadow: '0 10px 25px rgba(0,0,0,0.15)',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e)=> e.currentTarget.style.transform='scale(1.03)'}
+            onMouseLeave={(e)=> e.currentTarget.style.transform='scale(1)'}
+          >
+            {enviando ? 'ENVIANDO...' : 'ENVIAR SOLICITUD'}
+          </button>
+
+        </form>
+      </div>
+
+      {/* INFO + MAPA */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+
+        {/* UBICACIÓN */}
+        <div style={{ 
+          padding: '2rem', 
+          backgroundColor: 'var(--crema)', 
+          borderRadius: '25px', 
+          borderLeft: '5px solid var(--terracota)' 
+        }}>
+          <h4 style={{ 
+            color: 'var(--terracota)', 
+            fontWeight: '800', 
+            textTransform: 'uppercase', 
+            fontSize: '0.75rem', 
+            marginBottom: '0.8rem' 
+          }}>
+            Ubicación en Santander
+          </h4>
+
+          <address style={{ 
+            fontStyle: 'normal', 
+            fontSize: '1.2rem', 
+            color: 'var(--verde-selva)', 
+            fontFamily: 'var(--serif)' 
+          }}>
+            Vereda Río Frío, Sector Vegas, <br /> Santander, Colombia
+          </address>
+        </div>
+
+        {/* MAPA MEJORADO */}
+        <div style={{ 
+          height: '300px', 
+          borderRadius: '25px', 
+          overflow: 'hidden', 
+          position: 'relative',
+          boxShadow: '0 20px 40px rgba(0,0,0,0.12)'
+        }}>
+
+          <iframe
+            title="Mapa ubicación"
+            src="https://maps.google.com/maps?q=Santander,Colombia&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="100%"
+            loading="lazy"
+            style={{ 
+              border: 0, 
+              filter: 'grayscale(0.4) contrast(1.1)'
+            }}
+          ></iframe>
+
+          <div style={{
+            position: 'absolute',
+            bottom: '0',
+            width: '100%',
+            padding: '1rem',
+            background: 'linear-gradient(to top, rgba(0,0,0,0.5), transparent)',
+            color: 'white',
+            fontSize: '0.9rem'
+          }}>
+            📍 Santander, Colombia
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
     </main>
   );
 };

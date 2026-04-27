@@ -57,12 +57,12 @@ export const SobreNosotros = () => {
 
       {/* 1. HERO */}
       <section style={{
-        height: '70vh',
+        height: '40vh',
         position: 'relative',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&q=80&w=2000")',
+        backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("/banner_actividad.png")', // Asegúrate de que esta ruta sea correcta
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         color: 'white',
